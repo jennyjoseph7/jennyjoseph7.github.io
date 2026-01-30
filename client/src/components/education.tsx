@@ -8,7 +8,7 @@ export function Education() {
       degree: "Master of Computer Applications",
       institution: "Lovely Professional University, Punjab",
       period: "January 2023 – December 2025",
-      grade: "74.3"
+      grade: "74.3",
       color: "blue",
       position: "left",
       status: "Completed",
