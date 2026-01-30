@@ -8,7 +8,7 @@ export function Education() {
       degree: "Master of Computer Applications",
       institution: "Lovely Professional University, Punjab",
       period: "January 2023 – December 2025",
-      grade: "CGPA: 6.63",
+      grade: "74.3"
       color: "blue",
       position: "left",
       status: "Completed",
@@ -82,7 +82,7 @@ export function Education() {
               {education.map((edu, index) => {
                 const colors = getColorClasses(edu.color);
                 const isLeft = edu.position === "left";
-                
+
                 return (
                   <div key={index} className="relative flex items-center group">
                     {/* Mobile-first single column layout */}
@@ -102,7 +102,7 @@ export function Education() {
                               </Badge>
                             </div>
                           </div>
-                          
+
                           <div className="space-y-3">
                             <div className="flex items-center gap-2">
                               <MapPin className="h-4 w-4 text-gray-500" />
@@ -110,14 +110,14 @@ export function Education() {
                                 {edu.institution}
                               </span>
                             </div>
-                            
+
                             <div className="flex items-center gap-2">
                               <Calendar className="h-4 w-4 text-gray-500" />
                               <span className="text-gray-600 dark:text-gray-400 text-sm">
                                 {edu.period}
                               </span>
                             </div>
-                            
+
                             {edu.grade && (
                               <div className="flex items-center gap-2">
                                 <Award className="h-4 w-4 text-yellow-500" />
@@ -126,7 +126,7 @@ export function Education() {
                                 </span>
                               </div>
                             )}
-                            
+
                             {edu.description && (
                               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
                                 {edu.description}
@@ -155,7 +155,7 @@ export function Education() {
                                 <GraduationCap className="h-6 w-6 text-white" />
                               </div>
                             </div>
-                            
+
                             <div className="space-y-3 text-right">
                               <div className="flex items-center gap-2 justify-end">
                                 <span className={`${colors.institution} font-semibold`}>
@@ -163,14 +163,14 @@ export function Education() {
                                 </span>
                                 <MapPin className="h-4 w-4 text-gray-500" />
                               </div>
-                              
+
                               <div className="flex items-center gap-2 justify-end">
                                 <span className="text-gray-600 dark:text-gray-400 text-sm">
                                   {edu.period}
                                 </span>
                                 <Calendar className="h-4 w-4 text-gray-500" />
                               </div>
-                              
+
                               {edu.grade && (
                                 <div className="flex items-center gap-2 justify-end">
                                   <span className="text-gray-700 dark:text-gray-300 font-medium">
@@ -179,7 +179,7 @@ export function Education() {
                                   <Award className="h-4 w-4 text-yellow-500" />
                                 </div>
                               )}
-                              
+
                               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
                                 {edu.description}
                               </p>
@@ -212,7 +212,7 @@ export function Education() {
                                 </Badge>
                               </div>
                             </div>
-                            
+
                             <div className="space-y-3">
                               <div className="flex items-center gap-2">
                                 <MapPin className="h-4 w-4 text-gray-500" />
@@ -220,14 +220,14 @@ export function Education() {
                                   {edu.institution}
                                 </span>
                               </div>
-                              
+
                               <div className="flex items-center gap-2">
                                 <Calendar className="h-4 w-4 text-gray-500" />
                                 <span className="text-gray-600 dark:text-gray-400 text-sm">
                                   {edu.period}
                                 </span>
                               </div>
-                              
+
                               {edu.grade && (
                                 <div className="flex items-center gap-2">
                                   <Award className="h-4 w-4 text-yellow-500" />
@@ -236,7 +236,7 @@ export function Education() {
                                   </span>
                                 </div>
                               )}
-                              
+
                               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
                                 {edu.description}
                               </p>
