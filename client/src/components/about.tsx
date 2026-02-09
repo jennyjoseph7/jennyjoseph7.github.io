@@ -60,15 +60,15 @@ export function About() {
             <div className="space-y-8 order-1 lg:order-2">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I'm Jenny Joseph, and I recently completed my Master's in Computer Applications with a focus on AI and ML. What excites me is understanding how real software systems work. I learn by building things and figuring out how the pieces fit together.
+                  I'm Jenny Joseph, an MCA graduate focused on AI and ML, now working as an AI and ML Intern at DaveAI in Bengaluru. What drives me is not just learning algorithms, but understanding how real software systems are built, scaled, and maintained in production. I learn by doing. I work through bugs, backend logic, APIs, databases, and deployment issues until the system makes sense end to end.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I'm the kind of person who learns by doing. Give me a problem, and I'll dig into it, whether that means debugging backend logic, working through API design, or figuring out why something breaks in production. During my studies, I found myself gravitating less toward theoretical coursework and more toward building actual systems: full stack applications, REST APIs, database design, and version control workflows.
+                  Over time, my focus naturally shifted from theory toward building complete, working applications and understanding how engineering teams solve real problems. To move beyond academics, I completed virtual engineering programs with AWS, Accenture, Citi, Deloitte, HPE, and JP Morgan, treating them as real work simulations to study technical decision making, system design thinking, and professional development workflows.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  What I'm looking for now is an entry level engineering role where I can work on real systems, not just toy projects. I want to take ownership of actual problems, collaborate with people who know more than I do, and keep building strong fundamentals in backend and full stack engineering. I know there's a huge difference between what I've learned so far and what happens in production environments, and honestly, that's exactly what I'm excited about. I want to learn from people who've been there, contribute meaningfully, and grow into a solid engineer who builds things that work.
+                  Now, through my internship at DaveAI, I am gaining direct exposure to production level AI systems, real workflows, and collaborative engineering environments. My projects reflect practical impact, from AI-driven mental health platforms to full-stack e-commerce systems and complex data analytics.
                 </p>
               </div>
 

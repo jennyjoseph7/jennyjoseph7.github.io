@@ -20,6 +20,18 @@ export function Timeline() {
   const [filter, setFilter] = useState<string>("all");
 
   const timelineEvents: TimelineEvent[] = [
+    // Current
+    {
+      id: "0",
+      type: "experience",
+      title: "AI and ML Intern",
+      organization: "DaveAI · Internship",
+      period: "February 2026 - Present",
+      description: "Gaining direct exposure to production level AI systems, real workflows, and collaborative engineering environments.",
+      achievements: ["AI Systems", "Production Workflows", "Collaborative Engineering"],
+      color: "blue",
+      status: "ongoing"
+    },
     // December 2025
     {
       id: "6",
@@ -339,8 +351,8 @@ export function Timeline() {
     { value: "certification", label: "Certifications", icon: Award }
   ];
 
-  const filteredEvents = filter === "all" 
-    ? timelineEvents 
+  const filteredEvents = filter === "all"
+    ? timelineEvents
     : timelineEvents.filter(event => event.type === filter);
 
   const getTypeIcon = (type: string) => {
@@ -462,11 +474,10 @@ export function Timeline() {
                   variant={filter === option.value ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilter(option.value)}
-                  className={`flex items-center gap-2 transition-all duration-200 ${
-                    filter === option.value 
-                      ? "bg-blue-600 hover:bg-blue-700 text-white" 
+                  className={`flex items-center gap-2 transition-all duration-200 ${filter === option.value
+                      ? "bg-blue-600 hover:bg-blue-700 text-white"
                       : "hover:bg-blue-50 dark:hover:bg-blue-900/20"
-                  }`}
+                    }`}
                 >
                   <IconComponent className="h-4 w-4" />
                   {option.label}
