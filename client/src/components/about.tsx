@@ -37,7 +37,7 @@ export function About() {
             <div className="flex justify-center order-2 lg:order-1">
               <div className="relative group">
                 {/* Profile Picture with Modern Design */}
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 p-2">
+                <div className="relative w-72 h-[26rem] sm:w-80 sm:h-[30rem] lg:w-96 lg:h-[36rem] rounded-3xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 p-2">
                   <div className="w-full h-full rounded-2xl overflow-hidden">
                     <img
                       src="/profile.png?v=3"
