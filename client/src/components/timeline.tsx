@@ -20,18 +20,6 @@ export function Timeline() {
   const [filter, setFilter] = useState<string>("all");
 
   const timelineEvents: TimelineEvent[] = [
-    // Current
-    {
-      id: "0",
-      type: "experience",
-      title: "AI and ML Intern",
-      organization: "DaveAI · Internship",
-      period: "February 2026 - Present",
-      description: "Gaining direct exposure to production level AI systems, real workflows, and collaborative engineering environments.",
-      achievements: ["AI Systems", "Production Workflows", "Collaborative Engineering"],
-      color: "blue",
-      status: "ongoing"
-    },
     // December 2025
     {
       id: "6",

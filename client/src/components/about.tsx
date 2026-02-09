@@ -60,15 +60,23 @@ export function About() {
             <div className="space-y-8 order-1 lg:order-2">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I'm Jenny Joseph, an MCA graduate focused on AI and ML, now working as an AI and ML Intern at DaveAI in Bengaluru. What drives me is not just learning algorithms, but understanding how real software systems are built, scaled, and maintained in production. I learn by doing. I work through bugs, backend logic, APIs, databases, and deployment issues until the system makes sense end to end.
+                  I'm Jenny Joseph, an MCA graduate focused on AI and ML, now working as an <strong className="text-blue-600 dark:text-blue-400">AI and ML Intern at DaveAI</strong> in Bengaluru.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Over time, my focus naturally shifted from theory toward building complete, working applications and understanding how engineering teams solve real problems. To move beyond academics, I completed virtual engineering programs with AWS, Accenture, Citi, Deloitte, HPE, and JP Morgan, treating them as real work simulations to study technical decision making, system design thinking, and professional development workflows.
+                  What drives me is not just learning algorithms, but understanding how real software systems are built, scaled, and maintained in production. I learn by doing. I work through bugs, backend logic, APIs, databases, and deployment issues until the system makes sense end to end. Over time, my focus naturally shifted from theory toward building complete, working applications and understanding how engineering teams solve real problems.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Now, through my internship at DaveAI, I am gaining direct exposure to production level AI systems, real workflows, and collaborative engineering environments. My projects reflect practical impact, from AI-driven mental health platforms to full-stack e-commerce systems and complex data analytics.
+                  To move beyond academics, I completed virtual engineering programs with AWS, Accenture, Citi, Deloitte, HPE, and JP Morgan, treating them as real work simulations to study technical decision making, system design thinking, and professional development workflows. The goal was clarity on industry standards before entering a live engineering environment.
+                </p>
+
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  My projects reflect practical impact. <strong className="text-emerald-600 dark:text-emerald-400">MindWell</strong> is an AI-driven mental health platform that detects emotions across eleven categories and includes crisis-aware self-harm detection, built with a focus on responsible AI and real user value. <strong className="text-purple-600 dark:text-purple-400">Friends Cafe</strong> is a full-stack e-commerce system using Next.js, TypeScript, and MySQL with authentication, inventory tracking, and an admin dashboard. <strong className="text-blue-600 dark:text-blue-400">Midas</strong> focused on data analytics, involving messy data cleaning, dashboard creation, and translating insights into actionable recommendations.
+                </p>
+
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Now, through my internship at DaveAI, I am gaining direct exposure to production-level AI systems, real workflows, and collaborative engineering environments.
                 </p>
               </div>
 

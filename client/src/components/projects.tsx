@@ -20,8 +20,8 @@ export function Projects() {
     },
     {
       id: 2,
-      title: "Midas",
-      description: "Midas focused on data analytics, involving messy data cleaning, dashboard creation, and translating insights into actionable recommendations.",
+      title: "Forage Midas Project",
+      description: "This repository contains the solution to the Forage Midas virtual experience program. It demonstrates the application of data analytics skills to real world business problems, focusing on extracting actionable insights, visualizing key metrics, and making strategic recommendations. Tasks include data cleaning, exploratory analysis, dashboard creation, and delivering findings in a clear, professional format.",
       date: "August 2025 - September 2025",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       tech: ["Data Analysis", "Python (Programming Language)", "Data Visualization", "Business Intelligence"],
@@ -33,8 +33,8 @@ export function Projects() {
     },
     {
       id: 3,
-      title: "MindWell",
-      description: "MindWell is an AI driven mental health platform that detects emotions across eleven categories and includes crisis aware self harm detection, built with a focus on responsible AI and real user value.",
+      title: "Mindwell",
+      description: "MindWell is built as an AI first mental health companion for college students. The system combines a modular engine for story flow, emotion interpretation, generation control, safety checks, memory, and analytics so conversations stay stable across web and mobile. Its emotion intelligence detects eleven categories through dense linguistic cues and adjusts responses accordingly. A crisis aware copilot runs in the background to catch self harm signals and surface India specific helplines instantly while guiding the user through grounded steps. Journals pass through the same checks so the platform can spot mood shifts without exposing identities. The result is a quiet but constant support layer shaped with a clean React and Flask interface.",
       date: "April 2025",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       tech: ["React", "Flask"],
@@ -47,7 +47,7 @@ export function Projects() {
     {
       id: 4,
       title: "Friends Cafe",
-      description: "Friends Cafe is a full stack e-commerce system using Next.js, TypeScript, and MySQL with authentication, inventory tracking, and an admin dashboard.",
+      description: "Friends Cafe is structured as a complete online ordering system. Next.js with TypeScript powers the interface and routes, MySQL handles persistence, and a shared component library keeps the design consistent. A real time menu engine tracks inventory while category filters keep navigation simple. The cart recalculates totals, delivery rules, and item variations as the user edits. A direct OTP flow manages authentication and keeps sessions stable across history, tracking, and payments. An admin dashboard mirrors this clarity for menu updates, order checks, and trend views. The architecture stays predictable through REST style routes, tuned queries, reusable components, and custom hooks that isolate logic for carts and identity.",
       date: "",
       image: "/friendscafe.jpg",
       tech: ["TypeScript", "JavaScript", "MySQL", "CSS", "Tailwind CSS", "Next.js"],
