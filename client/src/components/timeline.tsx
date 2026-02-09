@@ -20,6 +20,18 @@ export function Timeline() {
   const [filter, setFilter] = useState<string>("all");
 
   const timelineEvents: TimelineEvent[] = [
+    // February 2026 - Present
+    {
+      id: "daveai-intern",
+      type: "experience",
+      title: "AI and ML Intern",
+      organization: "DaveAI · Internship",
+      period: "February 2026 - Present",
+      description: "Gaining direct exposure to production-level AI systems, real workflows, and collaborative engineering environments. Working with enterprise AI applications and learning industry best practices in AI/ML development.",
+      achievements: [],
+      color: "blue",
+      status: "ongoing"
+    },
     // December 2025
     {
       id: "6",
@@ -463,8 +475,8 @@ export function Timeline() {
                   size="sm"
                   onClick={() => setFilter(option.value)}
                   className={`flex items-center gap-2 transition-all duration-200 ${filter === option.value
-                      ? "bg-blue-600 hover:bg-blue-700 text-white"
-                      : "hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                    ? "bg-blue-600 hover:bg-blue-700 text-white"
+                    : "hover:bg-blue-50 dark:hover:bg-blue-900/20"
                     }`}
                 >
                   <IconComponent className="h-4 w-4" />

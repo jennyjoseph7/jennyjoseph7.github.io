@@ -21,17 +21,26 @@ export function Hero() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 font-medium animate-fadeInUp px-2 sm:px-4" style={{ animationDelay: '0.2s' }}>
-          Full-Stack Developer | Java, React, Next.js, Python, Flask | MCA Graduate Dec 2025
+            AI/ML Intern{' '}
+            <a
+              href="https://www.iamdave.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200 font-semibold"
+            >
+              @DaveAI
+            </a>
+            {' '}| MCA Graduate
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fadeInUp px-2 sm:px-4 mt-4 sm:mt-0" style={{ animationDelay: '0.4s' }}>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               asChild
             >
-              <a 
-                href="/resume.pdf" 
+              <a
+                href="/resume.pdf"
                 download="Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
