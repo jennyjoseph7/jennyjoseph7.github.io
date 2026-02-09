@@ -297,7 +297,7 @@ export function Timeline() {
     // June 2023
     {
       id: "11",
-      type: "experience",
+      type: "project",
       title: "Volunteer",
       organization: "Acharya - Arts and Culture",
       period: "October 2022 - June 2023",
