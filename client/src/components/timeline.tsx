@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 interface TimelineEvent {
   id: string;
-  type: "education" | "experience" | "project" | "certification";
+  type: "education" | "experience" | "project" | "certification" | "work_experience" | "volunteer";
   title: string;
   organization: string;
   period: string;
@@ -23,7 +23,7 @@ export function Timeline() {
     // February 2026 - Present
     {
       id: "daveai-intern",
-      type: "experience",
+      type: "work_experience",
       title: "AI and ML Intern",
       organization: "DaveAI · Internship",
       period: "February 2026 - Present",
@@ -297,7 +297,7 @@ export function Timeline() {
     // June 2023
     {
       id: "11",
-      type: "project",
+      type: "volunteer",
       title: "Volunteer",
       organization: "Acharya - Arts and Culture",
       period: "October 2022 - June 2023",
@@ -346,6 +346,7 @@ export function Timeline() {
   const filterOptions = [
     { value: "all", label: "All Events", icon: Clock },
     { value: "education", label: "Education", icon: GraduationCap },
+    { value: "work_experience", label: "Experience", icon: Briefcase },
     { value: "experience", label: "Internships", icon: Briefcase },
     { value: "project", label: "Projects", icon: Code },
     { value: "certification", label: "Certifications", icon: Award }
