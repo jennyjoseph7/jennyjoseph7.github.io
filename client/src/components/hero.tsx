@@ -72,7 +72,7 @@ export function Hero() {
           </p>
 
           {/* Terminal Console */}
-          <div className="max-w-2xl mx-auto rounded-xl overflow-hidden border border-zinc-300 dark:border-white/10 bg-[#0B0F17] text-left transition-all duration-200 mb-8 shadow-2xl">
+          <div className="max-w-3xl sm:max-w-4xl mx-auto rounded-xl overflow-hidden border border-zinc-300 dark:border-white/10 bg-[#0B0F17] text-left transition-all duration-200 mb-8 shadow-2xl">
             {/* Terminal Header */}
             <div className="px-4 py-2.5 bg-[#0F1420] border-b border-white/5 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -103,7 +103,7 @@ export function Hero() {
             </div>
 
             {/* Terminal Body */}
-            <div className="p-3.5 sm:p-4 font-mono text-xs sm:text-[13px] leading-relaxed space-y-1.5 min-h-[190px] max-h-[220px] overflow-y-auto bg-[#070A10] text-zinc-300">
+            <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed space-y-1.5 min-h-[265px] bg-[#070A10] text-zinc-300 overflow-x-auto overflow-y-hidden">
               {terminalLogs.slice(0, activeStep + 1).map((log, idx) => {
                 if (log.type === "cmd") {
                   return (
