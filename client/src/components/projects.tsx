@@ -43,72 +43,166 @@ export function Projects() {
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-blue-500"></span>
                     <span className="text-xs font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
-                      Campaign Intelligence
+                      Campaign Intelligence Platform
                     </span>
                   </div>
 
                   <div className="inline-flex p-0.5 rounded-lg bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.06]">
                     <button
-                      onClick={() => setActiveTabWizard("pipeline")}
+                      onClick={() => setActiveTabWizard("stages")}
                       className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
-                        activeTabWizard === "pipeline"
+                        activeTabWizard === "stages"
                           ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs font-semibold"
                           : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
                       }`}
                     >
-                      Pipeline Flow
+                      5-Step Workflow
                     </button>
                     <button
-                      onClick={() => setActiveTabWizard("schema")}
+                      onClick={() => setActiveTabWizard("metrics")}
                       className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
-                        activeTabWizard === "schema"
+                        activeTabWizard === "metrics"
                           ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs font-semibold"
                           : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
                       }`}
                     >
-                      JSON Schema
+                      Impact & Metrics
                     </button>
                   </div>
                 </div>
 
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
-                  AI Campaign Objective Wizard
+                  AI Campaign Objective Platform
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-5 leading-relaxed">
-                  11-step generative campaign wizard with seed baseline prompt injection and 11-language automotive technical spec-locking.
+
+                {/* Highlight Badges */}
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 text-xs font-medium">
+                    95% Time Reduction (3-5d ➔ 3-5m)
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 text-xs font-medium">
+                    10+ Indian Languages
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 text-xs font-medium">
+                    0 PII Violations
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
+                  End-to-end AI platform taking dealership campaign briefs to auto-generate, translate into 10+ regional languages, enforce compliance, and deploy WhatsApp templates to Airtel & RML in under 3–5 minutes.
                 </p>
 
                 {/* Interactive Display Area */}
-                {activeTabWizard === "pipeline" ? (
-                  <div className="bg-zinc-100 dark:bg-[#070A10] p-4 sm:p-5 rounded-xl border border-zinc-200 dark:border-white/[0.06] font-mono text-xs mb-5 space-y-3">
+                {activeTabWizard === "stages" ? (
+                  <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] mb-5 space-y-2">
                     <div className="text-zinc-500 text-[11px] uppercase tracking-wider mb-2 flex items-center justify-between">
-                      <span>11-Stage Pipeline Workflow</span>
-                      <span className="text-emerald-600 dark:text-emerald-400 font-mono font-semibold">LATENCY: 180ms</span>
+                      <span className="font-semibold">Live Demo: 5 Pipeline Stages</span>
+                      <span className="text-emerald-600 dark:text-emerald-400 font-mono font-semibold">3-5 MIN END-TO-END</span>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <div className="space-y-2">
                       {[
-                        "01. Grounded Seed", "02. Spec Injection", "03. Channel Map",
-                        "04. Voice Logic", "05. WABA Template", "06. Spec-Lock (11 Lang)",
-                        "07. Validation Gate", "08. CTA Resolver", "09. Live Preview",
-                      ].map((step, idx) => (
+                        {
+                          num: "01",
+                          title: "Select Campaign Type",
+                          desc: "Pre-Sales ➔ Test Drive Booking. System pre-configures CTAs, lead attributes, and conversation structures.",
+                          tag: "Automated Setup",
+                        },
+                        {
+                          num: "02",
+                          title: "AI Brief Generation",
+                          desc: "Natural language prompt triggers Gemini 3.5 Flash to populate 15 campaign parameters in seconds.",
+                          tag: "Gemini 3.5 Flash",
+                        },
+                        {
+                          num: "03",
+                          title: "Micro-AI Refinement",
+                          desc: "In-place single field regeneration preserving full context with zero form reset.",
+                          tag: "Context Guard",
+                        },
+                        {
+                          num: "04",
+                          title: "10+ Language Translation",
+                          desc: "Real-time native script rendering across Hindi, Tamil, Telugu, Kannada, etc. (no transliteration).",
+                          tag: "Native Script",
+                        },
+                        {
+                          num: "05",
+                          title: "One-Click Submission",
+                          desc: "Direct dispatch to Airtel & RML with background self-healing poller that auto-recovers rejections.",
+                          tag: "Airtel / RML APIs",
+                        },
+                      ].map((stage, idx) => (
                         <div
                           key={idx}
-                          className="p-2 rounded bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06] text-zinc-800 dark:text-zinc-300 text-[11px] truncate flex items-center gap-1.5 shadow-xs"
+                          className="p-2.5 rounded-lg bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06] flex items-start gap-2.5 shadow-2xs"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                          <span>{step}</span>
+                          <span className="w-5 h-5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            {stage.num}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-2">
+                              <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                                {stage.title}
+                              </h4>
+                              <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium shrink-0">
+                                {stage.tag}
+                              </span>
+                            </div>
+                            <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed mt-0.5">
+                              {stage.desc}
+                            </p>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] font-mono text-[11px] text-blue-700 dark:text-blue-300 leading-relaxed mb-5 overflow-x-auto max-h-[160px]">
-                    <pre>{`{
-  "campaign": "AutoNgage_Service_Recall",
-  "seedBaseline": { "is_master": true, "engine": "K15C", "features": ["AllGrip", "ABS"] },
-  "localization": { "en_lock": true, "languages": 11, "fallback": "deterministic" }
-}`}</pre>
+                  <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] mb-5">
+                    <div className="text-zinc-500 text-[11px] uppercase tracking-wider mb-3 font-semibold">
+                      Production Impact Benchmarks
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-3.5 rounded-xl bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06]">
+                        <div className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-mono mb-0.5">
+                          95%
+                        </div>
+                        <div className="text-xs font-bold text-zinc-900 dark:text-white mb-1">Time Reduction</div>
+                        <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight">
+                          Campaign onboarding cut from 3–5 days to under 3–5 minutes.
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06]">
+                        <div className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono mb-0.5">
+                          10+
+                        </div>
+                        <div className="text-xs font-bold text-zinc-900 dark:text-white mb-1">Languages</div>
+                        <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight">
+                          Native script AI translation across Indian regional languages.
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06]">
+                        <div className="text-2xl font-extrabold text-purple-600 dark:text-purple-400 font-mono mb-0.5">
+                          0
+                        </div>
+                        <div className="text-xs font-bold text-zinc-900 dark:text-white mb-1">PII Violations</div>
+                        <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight">
+                          Built-in compliance engine enforces zero PII at generation time.
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06]">
+                        <div className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 font-mono mb-0.5">
+                          3–5 min
+                        </div>
+                        <div className="text-xs font-bold text-zinc-900 dark:text-white mb-1">End-to-End</div>
+                        <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight">
+                          From natural language prompt to approved, deployed template.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 )}
 
@@ -117,19 +211,19 @@ export function Projects() {
                   <div className="flex gap-2 items-start">
                     <span className="px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
                     <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                      Manual campaign drafting caused variable errors and corrupted vehicle specs during vernacular translation.
+                      Manual template writing took 3–5 days per campaign, required separate translation for 10+ languages, and suffered high rejection rates from formatting and PII violations.
                     </p>
                   </div>
                   <div className="flex gap-2 items-start">
                     <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
                     <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                      End-to-end configuration wizard with Gemini 3.1 translation engine and strict English spec overrides.
+                      End-to-end AI platform taking dealership campaign briefs to auto-generate all 15 parameters via Gemini 3.5 Flash, translate into 10+ regional scripts, and deploy to Airtel & RML in 3–5 minutes.
                     </p>
                   </div>
                   <div className="flex gap-2 items-start">
                     <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Impact</span>
                     <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                      100% technical spec retention with automated multi-channel campaign dispatch.
+                      95% time reduction (from 3–5 days to 3–5 mins), zero PII violations, 10+ regional languages supported, and automated rejection self-healing.
                     </p>
                   </div>
                 </div>
@@ -137,7 +231,7 @@ export function Projects() {
 
               {/* Tech Stack */}
               <div className="flex flex-wrap gap-1.5 pt-5 border-t border-zinc-100 dark:border-white/[0.06] mt-5">
-                {["Next.js", "TypeScript", "Gemini 3.5 Flash", "PostgreSQL", "Tailwind CSS"].map((t, idx) => (
+                {["Next.js", "TypeScript", "Gemini 3.5 Flash", "Airtel & RML APIs", "Tailwind CSS", "Python"].map((t, idx) => (
                   <span key={idx} className="tech-chip text-[11px]">
                     {t}
                   </span>
