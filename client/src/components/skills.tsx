@@ -1,192 +1,139 @@
-import { 
-  Code, 
-  Database, 
-  Brain
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { Cpu } from "lucide-react";
 
 export function Skills() {
-  const skillCategories = [
-    {
-      title: "Full-Stack Development",
-      icon: Code,
-      color: "blue",
-      description: "Building responsive web applications with modern frameworks and clean architecture. Experienced in frontend design, backend APIs, and database integration.",
-      skills: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "Flask",
-        "Node.js",
-        "HTML/CSS",
-        "Tailwind CSS",
-        "REST APIs"
-      ],
-      projects: "Projects: MindWell, Friends Cafe"
-    },
-    {
-      title: "Database & Backend Engineering",
-      icon: Database,
-      color: "emerald",
-      description: "Designing and implementing database schemas, optimizing queries, and building secure authentication systems for scalable applications.",
-      skills: [
-        "MySQL",
-        "SQL",
-        "Database Design",
-        "API Development",
-        "Authentication",
-        "OTP Systems",
-        "Git"
-      ],
-      projects: "Projects: Friends Cafe (inventory tracking), MindWell (user sessions)"
-    },
-    {
-      title: "AI & Machine Learning",
-      icon: Brain,
-      color: "purple",
-      description: "Applying machine learning to real-world problems with focus on emotion detection and intelligent systems. Integrating ML models into production applications.",
-      skills: [
-        "Python",
-        "Machine Learning",
-        "Emotion Detection",
-        "Model Integration",
-        "Data Analysis",
-        "Flask APIs"
-      ],
-      projects: "Projects: MindWell (11-category emotion detection with crisis detection)"
-    }
+  const [activeDomain, setActiveDomain] = useState<string>("all");
+
+  const domains = [
+    { id: "all", label: "ALL TECH" },
+    { id: "ai", label: "AI & AGENTS" },
+    { id: "fullstack", label: "FULL STACK" },
+    { id: "backend", label: "DATA & BACKEND" },
+    { id: "devops", label: "DEVOPS & TOOLS" },
+    { id: "integrations", label: "INTEGRATIONS" },
   ];
 
-  const getColorClasses = (color: string) => {
-    const colors = {
-      blue: {
-        bg: "from-blue-50 via-blue-100 to-blue-50 dark:from-blue-900/20 dark:via-blue-800/20 dark:to-blue-900/20",
-        border: "border-blue-200 dark:border-blue-800",
-        icon: "bg-gradient-to-br from-blue-500 to-blue-600",
-        text: "text-blue-800 dark:text-blue-300",
-        badge: "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-        description: "text-blue-700 dark:text-blue-400"
-      },
-      emerald: {
-        bg: "from-emerald-50 via-emerald-100 to-emerald-50 dark:from-emerald-900/20 dark:via-emerald-800/20 dark:to-emerald-900/20",
-        border: "border-emerald-200 dark:border-emerald-800",
-        icon: "bg-gradient-to-br from-emerald-500 to-emerald-600",
-        text: "text-emerald-800 dark:text-emerald-300",
-        badge: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
-        description: "text-emerald-700 dark:text-emerald-400"
-      },
-      purple: {
-        bg: "from-purple-50 via-purple-100 to-purple-50 dark:from-purple-900/20 dark:via-purple-800/20 dark:to-purple-900/20",
-        border: "border-purple-200 dark:border-purple-800",
-        icon: "bg-gradient-to-br from-purple-500 to-purple-600",
-        text: "text-purple-800 dark:text-purple-300",
-        badge: "bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800",
-        description: "text-purple-700 dark:text-purple-400"
-      },
-      amber: {
-        bg: "from-amber-50 via-amber-100 to-amber-50 dark:from-amber-900/20 dark:via-amber-800/20 dark:to-amber-900/20",
-        border: "border-amber-200 dark:border-amber-800",
-        icon: "bg-gradient-to-br from-amber-500 to-amber-600",
-        text: "text-amber-800 dark:text-amber-300",
-        badge: "bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-        description: "text-amber-700 dark:text-amber-400"
-      },
-      rose: {
-        bg: "from-rose-50 via-rose-100 to-rose-50 dark:from-rose-900/20 dark:via-rose-800/20 dark:to-rose-900/20",
-        border: "border-rose-200 dark:border-rose-800",
-        icon: "bg-gradient-to-br from-rose-500 to-rose-600",
-        text: "text-rose-800 dark:text-rose-300",
-        badge: "bg-rose-100 dark:bg-rose-900/30 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-800",
-        description: "text-rose-700 dark:text-rose-400"
-      },
-      cyan: {
-        bg: "from-cyan-50 via-cyan-100 to-cyan-50 dark:from-cyan-900/20 dark:via-cyan-800/20 dark:to-cyan-900/20",
-        border: "border-cyan-200 dark:border-cyan-800",
-        icon: "bg-gradient-to-br from-cyan-500 to-cyan-600",
-        text: "text-cyan-800 dark:text-cyan-300",
-        badge: "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800",
-        description: "text-cyan-700 dark:text-cyan-400"
-      }
-    };
-    return colors[color as keyof typeof colors] || colors.blue;
-  };
+  const skillMatrix = [
+    // AI & Agents
+    { name: "Gemini 3.5 Flash", category: "ai", role: "LLM Reasoning & Extraction" },
+    { name: "Azure GPT-4o", category: "ai", role: "Multi-modal Evaluation" },
+    { name: "Structured JSON Schemas", category: "ai", role: "Deterministic Output Locking" },
+    { name: "Prompt Hardening", category: "ai", role: "Zero-Hallucination Guardrails" },
+    { name: "AI Agents", category: "ai", role: "Multi-Step Workflow Orchestration" },
+    { name: "Intent Classification", category: "ai", role: "25+ Disposition Taxonomy" },
+    { name: "Emotion Intelligence & NLP", category: "ai", role: "Dense Linguistic Processing" },
+    
+    // Full Stack
+    { name: "Python", category: "fullstack", role: "Core Systems & AI Pipelines" },
+    { name: "TypeScript", category: "fullstack", role: "Type-Safe Full Stack Applications" },
+    { name: "Next.js (App Router)", category: "fullstack", role: "Production Web Applications" },
+    { name: "React 18", category: "fullstack", role: "Reactive UI Systems & Custom Hooks" },
+    { name: "Tailwind CSS", category: "fullstack", role: "Precision Design Systems" },
+    { name: "Node.js & Express", category: "fullstack", role: "RESTful Backend Web Services" },
+    { name: "Flask", category: "fullstack", role: "Python Microservices & APIs" },
+
+    // Data & Backend
+    { name: "PostgreSQL", category: "backend", role: "Relational Data Modeling" },
+    { name: "Dealership DMS ETL", category: "backend", role: "Custom Schema Normalization" },
+    { name: "JSZip & ArrayBuffers", category: "backend", role: "Client-Side Binary & Audio Packaging" },
+    { name: "MySQL", category: "backend", role: "E-Commerce & Auth Persistence" },
+    { name: "Drizzle ORM", category: "backend", role: "Type-Safe Schema Migrations" },
+    { name: "Async Task Queues", category: "backend", role: "Background Transcript Ingestion" },
+    { name: "SQLite", category: "backend", role: "Embedded Local Databases" },
+
+    // DevOps & Tools
+    { name: "Git & GitHub", category: "devops", role: "Version Control & Collaboration" },
+    { name: "Linux (Ubuntu/Debian)", category: "devops", role: "Production Server Environments" },
+    { name: "GitHub Actions (CI/CD)", category: "devops", role: "Automated Build & Deployment" },
+    { name: "Vite", category: "devops", role: "Fast Module Bundling" },
+
+    // Integrations
+    { name: "Meta WhatsApp WABA API", category: "integrations", role: "Multi-Channel Communication" },
+    { name: "LeadSquared CRM API", category: "integrations", role: "Lead Progression Webhooks" },
+    { name: "REST API Route Proxies", category: "integrations", role: "Multi-Tenant Request Isolation" },
+    { name: "Cookie-Based RBAC", category: "integrations", role: "Multi-Account Session Switching" },
+  ];
+
+  const filteredSkills = activeDomain === "all"
+    ? skillMatrix
+    : skillMatrix.filter((s) => s.category === activeDomain);
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+    <section id="skills" className="py-24 bg-transparent relative">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-emerald-600 to-blue-800 bg-clip-text text-transparent">
-              Skills & Technologies
+        <div className="max-w-6xl mx-auto">
+          {/* Clean Section Header without extra eyebrow badge */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-3">
+              Skills & Technical Matrix
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
-              The technologies I actively work with, backed by real projects and hands-on experience.
+            <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
+              Technologies actively used in production systems, prompt pipelines, and full-stack software.
             </p>
+
+            {/* Domain Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-2 mt-8">
+              {domains.map((dom) => (
+                <button
+                  key={dom.id}
+                  onClick={() => setActiveDomain(dom.id)}
+                  className={`rounded-full px-4 py-1.5 text-xs font-mono font-medium transition-all cursor-pointer ${
+                    activeDomain === dom.id
+                      ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-950 border border-zinc-900 dark:border-white font-semibold shadow-xs"
+                      : "border border-zinc-300 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/[0.04]"
+                  }`}
+                >
+                  {dom.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {skillCategories.map((category, index) => {
-              const IconComponent = category.icon;
-              const colors = getColorClasses(category.color);
-              
-              return (
-                <Card 
-                  key={index} 
-                  className={`bg-gradient-to-br ${colors.bg} border-2 ${colors.border} hover:shadow-2xl transition-all duration-500 hover-lift group overflow-hidden relative`}
-                  style={{ animationDelay: `${index * 100}ms` }}
+          {/* Clean High-End Matrix Box */}
+          <div className="bg-white dark:bg-[#0D111A] rounded-2xl border border-zinc-200 dark:border-white/[0.08] p-6 sm:p-8 shadow-sm">
+            <div className="flex items-center justify-between pb-5 border-b border-zinc-100 dark:border-white/[0.06] mb-6">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span className="font-mono text-xs text-zinc-800 dark:text-zinc-300 uppercase font-semibold">
+                  DOMAIN: {activeDomain.toUpperCase()}
+                </span>
+              </div>
+              <span className="font-mono text-xs text-zinc-500">
+                {filteredSkills.length} Technologies Indexed
+              </span>
+            </div>
+
+            {/* High-Density Tech Chips */}
+            <div className="flex flex-wrap gap-2.5 mb-8">
+              {filteredSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="tech-chip text-xs sm:text-sm py-2 px-3.5 font-medium cursor-default"
                 >
-                  {/* Animated gradient border on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${colors.icon} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-lg`}></div>
-                  
-                  {/* Top accent line */}
-                  <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${colors.icon}`}></div>
-                  
-                  <CardContent className="p-6 relative z-10">
-                    {/* Category Header */}
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`${colors.icon} p-3 rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className={`text-xl font-bold ${colors.text} group-hover:scale-105 transition-transform duration-300`}>
-                        {category.title}
-                      </h3>
-                    </div>
+                  {skill.name}
+                </div>
+              ))}
+            </div>
 
-                    {/* Description */}
-                    {category.description && (
-                      <p className={`text-sm ${colors.description} mb-5 leading-relaxed`}>
-                        {category.description}
-                      </p>
-                    )}
-
-                    {/* Skills as badges */}
-                    {category.skills && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {category.skills.map((skill, skillIndex) => (
-                          <Badge 
-                            key={skillIndex} 
-                            variant="secondary" 
-                            className={`text-xs px-3 py-1.5 ${colors.badge} border hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md font-medium`}
-                          >
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Projects */}
-                    {category.projects && (
-                      <p className={`text-xs ${colors.description} mt-4 pt-4 border-t ${colors.border} italic`}>
-                        {category.projects}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
+            {/* Architectural Role Breakdown */}
+            <div className="pt-6 border-t border-zinc-100 dark:border-white/[0.06]">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3.5 font-semibold">
+                Production System Usage
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                {filteredSkills.slice(0, 6).map((skill, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 rounded-xl bg-zinc-50 dark:bg-[#070A10] border border-zinc-200 dark:border-white/[0.06] flex items-center justify-between text-xs font-mono"
+                  >
+                    <span className="text-zinc-900 dark:text-white font-medium">{skill.name}</span>
+                    <span className="text-zinc-500 dark:text-zinc-400 text-[11px] truncate ml-2">
+                      {skill.role}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

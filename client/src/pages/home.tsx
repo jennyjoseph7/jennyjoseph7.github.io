@@ -1,28 +1,30 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Stats } from "@/components/stats";
 import { About } from "@/components/about";
-import { Skills } from "@/components/skills";
+import { WhatIBuild } from "@/components/what-i-build";
 import { Projects } from "@/components/projects";
-import { Certifications } from "@/components/certifications";
+import { Experience } from "@/components/experience";
+import { Skills } from "@/components/skills";
+import { GitHubSection } from "@/components/github-section";
 import { Education } from "@/components/education";
-import { Timeline } from "@/components/timeline";
+import { Certifications } from "@/components/certifications";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#080B10] text-zinc-900 dark:text-zinc-100 transition-colors duration-200">
       <Header />
       <main>
         <Hero />
-        <Stats />
         <About />
-        <Skills />
+        <WhatIBuild />
         <Projects />
-        <Certifications />
+        <Experience />
+        <Skills />
+        <GitHubSection />
         <Education />
-        <Timeline />
+        <Certifications />
         <Contact />
       </main>
       <Footer />

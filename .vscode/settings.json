@@ -1,0 +1,33 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "cSpell.words": [
+    "ACCN",
+    "Acharya",
+    "Agentic",
+    "agentic",
+    "Bengaluru",
+    "Bento",
+    "Bullmenn",
+    "ECOMM",
+    "FINTECH",
+    "firewalled",
+    "Glassmorphism",
+    "jennyjoseph",
+    "JPMC",
+    "Karnataka",
+    "Mastersheetupdater",
+    "mastersheetupdater",
+    "Ngage",
+    "Replit",
+    "replit",
+    "SDLC",
+    "SYNCER",
+    "Syncer",
+    "WABA",
+    "waba",
+    "Wouter",
+    "wouter"
+  ]
+}

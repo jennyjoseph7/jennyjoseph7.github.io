@@ -1,18 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
-
 export default defineConfig(async () => {
   const plugins = [
     react(),
-    runtimeErrorOverlay(),
   ];
 
-  // Dynamically import cartographer plugin only in development on Replit
+  // Dynamically import Replit plugins only in development on Replit
   if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
+    const runtimeErrorOverlay = (await import("@replit/vite-plugin-runtime-error-modal")).default;
+    plugins.push(runtimeErrorOverlay() as any);
     const cartographerModule = await import("@replit/vite-plugin-cartographer");
-    plugins.push(cartographerModule.cartographer());
+    plugins.push(cartographerModule.cartographer() as any);
   }
 
   return {

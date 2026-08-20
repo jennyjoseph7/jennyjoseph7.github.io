@@ -9,10 +9,8 @@ import NotFound from "@/pages/not-found";
 
 // Detect base path for GitHub Pages
 const getBasePath = () => {
-  // Use Vite's BASE_URL which is automatically set from vite.config.ts
   const base = import.meta.env.BASE_URL;
-  if (base && base !== '/') {
-    // Remove trailing slash for wouter compatibility
+  if (base && base !== '/' && base !== '') {
     return base.replace(/\/$/, '');
   }
   return '';
@@ -21,20 +19,29 @@ const getBasePath = () => {
 function Router() {
   const base = getBasePath();
   
+  if (base) {
+    return (
+      <WouterRouter base={base}>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </WouterRouter>
+    );
+  }
+
   return (
-    <WouterRouter base={base}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-    </WouterRouter>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />

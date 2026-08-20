@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light";
 
@@ -14,7 +14,7 @@ type ThemeProviderState = {
 };
 
 const initialState: ThemeProviderState = {
-  theme: "light",
+  theme: "dark",
   setTheme: () => null,
   toggleTheme: () => null,
 };
@@ -23,29 +23,41 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "light",
+  defaultTheme = "dark",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme;
+    try {
+      const saved = localStorage.getItem("theme") as Theme;
+      if (saved === "dark" || saved === "light") return saved;
+    } catch (e) {}
+    return defaultTheme;
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    if (typeof window === "undefined") return;
+    try {
+      const root = window.document.documentElement;
+      root.classList.remove("light", "dark");
+      root.classList.add(theme);
+    } catch (e) {}
   }, [theme]);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem("theme", theme);
-      setTheme(theme);
+    setTheme: (newTheme: Theme) => {
+      try {
+        localStorage.setItem("theme", newTheme);
+      } catch (e) {}
+      setTheme(newTheme);
     },
     toggleTheme: () => {
-      const newTheme = theme === "light" ? "dark" : "light";
-      localStorage.setItem("theme", newTheme);
-      setTheme(newTheme);
+      const nextTheme = theme === "light" ? "dark" : "light";
+      try {
+        localStorage.setItem("theme", nextTheme);
+      } catch (e) {}
+      setTheme(nextTheme);
     },
   };
 
@@ -56,11 +68,10 @@ export function ThemeProvider({
   );
 }
 
-export const useTheme = () => {
+export function useTheme() {
   const context = useContext(ThemeProviderContext);
-
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider");
-
+  if (!context) {
+    return initialState;
+  }
   return context;
-};
+}

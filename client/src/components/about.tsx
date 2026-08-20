@@ -1,93 +1,128 @@
 import { MapPin } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export function About() {
-  const getColorClasses = (color: string) => {
-    const colors = {
-      blue: {
-        bg: "bg-blue-100 dark:bg-blue-900/30",
-        icon: "text-blue-600",
-        text: "text-blue-800 dark:text-blue-300"
-      },
-      emerald: {
-        bg: "bg-emerald-100 dark:bg-emerald-900/30",
-        icon: "text-emerald-600",
-        text: "text-emerald-800 dark:text-emerald-300"
-      },
-      purple: {
-        bg: "bg-purple-100 dark:bg-purple-900/30",
-        icon: "text-purple-600",
-        text: "text-purple-800 dark:text-purple-300"
-      }
-    };
-    return colors[color as keyof typeof colors] || colors.blue;
-  };
+  const coreCompetencies = [
+    {
+      title: "AI & Workflow Automation",
+      desc: "Hardened prompt pipelines, JSON schema outputs, and multi-step agents that automate operational workflows.",
+      code: "LLMs · Schemas · Agents",
+    },
+    {
+      title: "Full Stack Development",
+      desc: "Next.js/React frontend systems with robust backend APIs, task queues, and relational database schemas.",
+      code: "Next.js · TypeScript · Python",
+    },
+    {
+      title: "Data & Lead Operations",
+      desc: "Speech transcript batch analysis, 25+ disposition classification, service leakage detection, and BI dashboards.",
+      code: "Conversation Analytics · BI",
+    },
+    {
+      title: "Integrations & Tooling",
+      desc: "Meta WhatsApp Business API automation, CRM integrations (LeadSquared), and internal developer tooling.",
+      code: "Meta WABA · REST APIs",
+    },
+  ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-24 bg-transparent relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Clean Section Header without extra eyebrow badge */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">About Me</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-3">
+              About Me
+            </h2>
+            <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
+              Building practical AI systems, automation workflows, and full-stack software for real business operations.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Profile Picture Section */}
-            <div className="flex justify-center order-2 lg:order-1">
-              <div className="relative group">
-                {/* Profile Picture with Modern Design */}
-                <div className="relative w-72 h-[26rem] sm:w-80 sm:h-[30rem] lg:w-96 lg:h-[36rem] rounded-3xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 p-2">
-                  <div className="w-full h-full rounded-2xl overflow-hidden">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left: Professional Portrait Image */}
+            <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+              <div className="relative group w-full max-w-sm">
+                <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#0D111A] p-2 shadow-xl border border-zinc-200 dark:border-white/[0.08] hover:border-zinc-300 dark:hover:border-white/20 transition-colors duration-200">
+                  <div className="aspect-[3/4] w-full rounded-xl overflow-hidden bg-zinc-100 dark:bg-[#070A10] relative">
                     <img
-                      src="/profile.png?v=3"
-                      alt="Jenny Joseph K - Professional Portrait"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out relative z-0"
+                      src="/profile.png"
+                      alt="Jenny Joseph K - AI Automation Engineer"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
-                        // Fallback if image doesn't load
                         const target = e.target as HTMLImageElement;
-                        target.src = '/profile.png?v=' + Date.now();
+                        target.src = "/profile.png?v=" + Date.now();
                       }}
                     />
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 via-transparent to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    {/* Clean Location Tag */}
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex items-center justify-between text-white">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span className="text-xs font-medium text-zinc-100">Bengaluru, India</span>
+                      </div>
+                      <span className="text-xs text-zinc-300 font-mono">DaveAI</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Content Section */}
-            <div className="space-y-8 order-1 lg:order-2">
-              <div className="space-y-6">
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I'm Jenny Joseph, an MCA graduate focused on AI and ML, now working as an <strong className="text-blue-600 dark:text-blue-400">AI and ML Intern at DaveAI</strong> in Bengaluru.
+            {/* Right: Refined Professional Engineering Narrative */}
+            <div className="lg:col-span-7 space-y-5 order-1 lg:order-2">
+              <div className="space-y-4 text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                <p>
+                  I work as an <strong className="text-zinc-950 dark:text-white font-semibold">AI/ML Engineer & Full Stack Developer</strong> at <strong className="text-zinc-950 dark:text-white font-semibold">DaveAI</strong>, where I build AI-driven features and automation systems for real business workflows.
                 </p>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  What drives me is not just learning algorithms, but understanding how real software systems are built, scaled, and maintained in production. I learn by doing. I work through bugs, backend logic, APIs, databases, and deployment issues until the system makes sense end to end. Over time, my focus naturally shifted from theory toward building complete, working applications and understanding how engineering teams solve real problems.
+                <p>
+                  My work sits at the intersection of AI and software engineering. I specialize in taking core AI capabilities and architecting the complete system around them — from context formulation and prompt logic to structured JSON schemas, validation gates, backend APIs, and intuitive user experiences.
                 </p>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To move beyond academics, I completed virtual engineering programs with AWS, Accenture, Citi, Deloitte, HPE, and JP Morgan, treating them as real work simulations to study technical decision making, system design thinking, and professional development workflows. The goal was clarity on industry standards before entering a live engineering environment.
+                <p>
+                  At DaveAI, my engineering contributions include building generative campaign strategy wizards, multilingual content localization pipelines, WhatsApp Business API template automation, and the <strong className="text-zinc-950 dark:text-white font-semibold">AutoEngage Syncer Suite</strong> — an operations platform built from scratch that automated dual-export merging and transcript validation, cutting lead processing time from 50 minutes to under 5 minutes per 100 leads across 15+ automotive dealer networks.
                 </p>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  My projects reflect practical impact. <strong className="text-emerald-600 dark:text-emerald-400">MindWell</strong> is an AI-driven mental health platform that detects emotions across eleven categories and includes crisis-aware self-harm detection, built with a focus on responsible AI and real user value. <strong className="text-purple-600 dark:text-purple-400">Friends Cafe</strong> is a full-stack e-commerce system using Next.js, TypeScript, and MySQL with authentication, inventory tracking, and an admin dashboard. <strong className="text-blue-600 dark:text-blue-400">Midas</strong> focused on data analytics, involving messy data cleaning, dashboard creation, and translating insights into actionable recommendations.
+                <p>
+                  I work primarily with <strong className="text-zinc-950 dark:text-white font-semibold">Python, TypeScript, Next.js, React, and REST APIs</strong>, focusing on Applied AI and building reliable full-stack software that delivers genuine operational value.
                 </p>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Now, through my internship at DaveAI, I am gaining direct exposure to production-level AI systems, real workflows, and collaborative engineering environments.
-                </p>
+                <div className="pt-3 border-t border-zinc-200 dark:border-white/[0.06] text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2">
+                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-zinc-100 dark:bg-white/[0.04] text-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-white/[0.08] font-semibold">
+                    MCA (AI/ML)
+                  </span>
+                  <span>Lovely Professional University • Artificial Intelligence & Machine Learning</span>
+                </div>
               </div>
 
               {/* Location Badge */}
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                <MapPin className="h-5 w-5" />
-                <span className="text-sm">Bengaluru, Karnataka, India</span>
+              <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 pt-1">
+                <MapPin className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+                <span>Bengaluru, Karnataka, India</span>
               </div>
             </div>
           </div>
 
+          {/* Competency Bento Tiles Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14 pt-12 border-t border-zinc-200 dark:border-white/[0.06]">
+            {coreCompetencies.map((comp, idx) => (
+              <div
+                key={idx}
+                className="bg-white dark:bg-[#0D111A] p-5 rounded-2xl border border-zinc-200 dark:border-white/[0.08] hover:border-zinc-300 dark:hover:border-white/20 transition-all duration-200 flex flex-col justify-between shadow-sm"
+              >
+                <div>
+                  <h3 className="font-bold text-zinc-900 dark:text-white text-sm mb-1.5">
+                    {comp.title}
+                  </h3>
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                    {comp.desc}
+                  </p>
+                </div>
+
+                <span className="font-mono text-[11px] text-zinc-500 font-medium pt-2 border-t border-zinc-100 dark:border-white/[0.06]">
+                  {comp.code}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,49 +1,41 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export function Footer() {
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/jennyjoseph7",
-      label: "GitHub",
-    },
-    {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/jenny-joseph-k-b6a50a230",
-      label: "LinkedIn",
-    },
-    {
-      icon: Mail,
-      href: "mailto:jennyjosephksj7@gmail.com",
-      label: "Email",
-    },
-  ];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0">
-            <p className="text-gray-400">© {new Date().getFullYear()} Jenny Joseph K. All rights reserved.</p>
+    <footer className="w-full border-t border-zinc-200 dark:border-white/[0.08] bg-transparent py-8 transition-colors">
+      <div className="w-full px-6 sm:px-10 lg:px-14 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+        {/* Left: Brand Identity */}
+        <div className="flex items-center gap-2.5">
+          <div className="w-6 h-6 rounded-md bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center font-bold text-[10px]">
+            &gt;_
           </div>
+          <span className="font-semibold text-zinc-900 dark:text-white">
+            Jenny Joseph K
+          </span>
+          <span className="hidden md:inline text-zinc-400 dark:text-zinc-600">·</span>
+          <span className="hidden md:inline text-zinc-500">
+            AI Automation Engineer & Full Stack Developer
+          </span>
+        </div>
 
-          <div className="flex items-center space-x-6">
-            {socialLinks.map((link, index) => {
-              const IconComponent = link.icon;
-              return (
-                <a
-                  key={index}
-                  href={link.href}
-                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label={link.label}
-                >
-                  <IconComponent className="h-6 w-6" />
-                </a>
-              );
-            })}
-          </div>
+        {/* Right: Copyright & Back to Top */}
+        <div className="flex items-center gap-4">
+          <p className="text-zinc-500 dark:text-zinc-400 text-center sm:text-right">
+            © {new Date().getFullYear()} · Bengaluru, India
+          </p>
+
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-white/[0.05] hover:bg-zinc-200 dark:hover:bg-white/10 text-zinc-800 dark:text-zinc-300 transition-colors border border-zinc-200 dark:border-white/10 cursor-pointer text-xs"
+            title="Scroll to top"
+          >
+            <span>Top</span>
+            <ArrowUp className="h-3 w-3" />
+          </button>
         </div>
       </div>
     </footer>
