@@ -1,29 +1,6 @@
 import { MapPin } from "lucide-react";
 
 export function About() {
-  const coreCompetencies = [
-    {
-      title: "AI & Workflow Automation",
-      desc: "Hardened prompt pipelines, JSON schema outputs, and multi-step agents that automate operational workflows.",
-      code: "LLMs · Schemas · Agents",
-    },
-    {
-      title: "Full Stack Development",
-      desc: "Next.js/React frontend systems with robust backend APIs, task queues, and relational database schemas.",
-      code: "Next.js · TypeScript · Python",
-    },
-    {
-      title: "Data & Lead Operations",
-      desc: "Speech transcript batch analysis, 25+ disposition classification, service leakage detection, and BI dashboards.",
-      code: "Conversation Analytics · BI",
-    },
-    {
-      title: "Integrations & Tooling",
-      desc: "Meta WhatsApp Business API automation, CRM integrations (LeadSquared), and internal developer tooling.",
-      code: "Meta WABA · REST APIs",
-    },
-  ];
-
   return (
     <section id="about" className="py-24 bg-transparent relative">
       <div className="container mx-auto px-4 sm:px-6">
@@ -74,11 +51,11 @@ export function About() {
                 </p>
 
                 <p>
-                  My work sits at the intersection of AI and software engineering. I specialize in taking core AI capabilities and architecting the complete system around them — from context formulation and prompt logic to structured JSON schemas, validation gates, backend APIs, and intuitive user experiences.
+                  My work sits at the intersection of AI and software engineering. I specialize in taking core AI capabilities and architecting the complete system around them from context formulation and prompt logic to structured JSON schemas, validation gates, backend APIs, and intuitive user experiences.
                 </p>
 
                 <p>
-                  At DaveAI, my engineering contributions include building generative campaign strategy wizards, multilingual content localization pipelines, WhatsApp Business API template automation, and the <strong className="text-zinc-950 dark:text-white font-semibold">AutoEngage Syncer Suite</strong> — an operations platform built from scratch that automated dual-export merging and transcript validation, cutting lead processing time from 50 minutes to under 5 minutes per 100 leads across 15+ automotive dealer networks.
+                  At DaveAI, my engineering contributions include building generative campaign strategy wizards, multilingual content localization pipelines, WhatsApp Business API template automation, and the <strong className="text-zinc-950 dark:text-white font-semibold">AutoEngage Syncer Suite</strong> - an operations platform built from scratch that automated dual-export merging and transcript validation, cutting lead processing time from 50 minutes to under 5 minutes per 100 leads across 15+ automotive dealer networks.
                 </p>
 
                 <p>
@@ -99,29 +76,6 @@ export function About() {
                 <span>Bengaluru, Karnataka, India</span>
               </div>
             </div>
-          </div>
-
-          {/* Competency Bento Tiles Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14 pt-12 border-t border-zinc-200 dark:border-white/[0.06]">
-            {coreCompetencies.map((comp, idx) => (
-              <div
-                key={idx}
-                className="bg-white dark:bg-[#0D111A] p-5 rounded-2xl border border-zinc-200 dark:border-white/[0.08] hover:border-zinc-300 dark:hover:border-white/20 transition-all duration-200 flex flex-col justify-between shadow-sm"
-              >
-                <div>
-                  <h3 className="font-bold text-zinc-900 dark:text-white text-sm mb-1.5">
-                    {comp.title}
-                  </h3>
-                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                    {comp.desc}
-                  </p>
-                </div>
-
-                <span className="font-mono text-[11px] text-zinc-500 font-medium pt-2 border-t border-zinc-100 dark:border-white/[0.06]">
-                  {comp.code}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       </div>
