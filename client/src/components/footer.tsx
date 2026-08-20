@@ -28,10 +28,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full border-t border-zinc-200 dark:border-white/[0.08] bg-transparent pt-12 pb-10 transition-colors">
+    <footer className="w-full border-t border-zinc-200 dark:border-white/[0.08] bg-transparent py-8 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        {/* Top Row: Brand & Quick Navigation */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-200/60 dark:border-white/[0.06]">
+        {/* Brand, Navigation & Socials */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand Info */}
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center font-bold text-xs font-mono shadow-xs">
@@ -100,11 +100,6 @@ export function Footer() {
               <ArrowUp className="h-3 w-3 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
-        </div>
-
-        {/* Bottom Row: Metadata & Location */}
-        <div className="pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-400">
-          <p>© {new Date().getFullYear()} Jenny Joseph K · Bengaluru, Karnataka, India</p>
         </div>
       </div>
     </footer>
