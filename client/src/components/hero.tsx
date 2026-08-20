@@ -45,16 +45,16 @@ export function Hero() {
       className="min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-20 pb-16"
     >
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Top Kicker / Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-200/70 dark:bg-white/[0.06] border border-zinc-300 dark:border-white/10 text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-3.5 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Jenny Joseph K · Software & AI Automation Engineer</span>
+            <span>Jenny Joseph K · AI Automation Engineer</span>
           </div>
 
           {/* Display Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-3.5 leading-tight">
-            AI Automation & Full-Stack Systems
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-3.5 leading-tight md:whitespace-nowrap">
+            I BUILD AI SYSTEMS THAT AUTOMATE REAL WORK.
           </h1>
 
           {/* Single Concise Supporting Text */}
