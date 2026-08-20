@@ -42,7 +42,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-25 pb-25"
     >
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
