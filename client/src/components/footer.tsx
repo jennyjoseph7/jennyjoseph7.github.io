@@ -103,12 +103,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Row: Metadata & Location */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+        <div className="pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-400">
           <p>© {new Date().getFullYear()} Jenny Joseph K · Bengaluru, Karnataka, India</p>
-
-          <p className="flex items-center gap-1 text-[11px]">
-            <span>Crafted with React, TypeScript & Tailwind CSS</span>
-          </p>
         </div>
       </div>
     </footer>
