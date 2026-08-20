@@ -42,24 +42,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-20 pb-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-16"
     >
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Top Kicker / Status Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.04] backdrop-blur-md shadow-[0_1px_6px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_12px_rgba(0,0,0,0.3)] mb-4 hover:border-zinc-300 dark:hover:border-white/20 transition-all">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
-              Jenny Joseph K
-            </span>
-            <span className="h-3 w-px bg-zinc-300 dark:bg-zinc-700/80" aria-hidden="true" />
-            <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
-              AI Automation Engineer
-            </span>
-          </div>
 
           {/* Display Headline */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-3.5 leading-tight md:whitespace-nowrap">

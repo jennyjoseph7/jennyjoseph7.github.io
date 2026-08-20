@@ -250,9 +250,6 @@ export function Projects() {
                       Operations Platform
                     </span>
                   </div>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                    Live in Production
-                  </span>
                 </div>
 
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">

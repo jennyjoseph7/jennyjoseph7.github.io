@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 export function GitHubSection() {
   const repositories = [
     {
-      name: "Mastersheetupdater",
+      name: "Autongage Syncer",
       description:
         "Production data sync, DMS schema normalizer, dialer deduplication, and audio pipeline suite actively used by DaveAI BA and operations teams across 15+ automotive dealerships.",
       language: "Next.js / TypeScript",
       langColor: "bg-purple-500",
       url: "https://github.com/jennyjoseph7/Mastersheetupdater",
       topics: ["Next.js", "TypeScript", "JSZip", "XLSX", "Lead Ops", "Dealership ETL"],
-      tag: "v1.0 // LIVE IN PROD",
+      tag: "v3.0",
     },
     {
       name: "MindWell",
