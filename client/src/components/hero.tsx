@@ -46,10 +46,19 @@ export function Hero() {
     >
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Top Kicker / Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-200/70 dark:bg-white/[0.06] border border-zinc-300 dark:border-white/10 text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-3.5 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Jenny Joseph K · AI Automation Engineer</span>
+          {/* Top Kicker / Status Badge */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.04] backdrop-blur-md shadow-[0_1px_6px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_12px_rgba(0,0,0,0.3)] mb-4 hover:border-zinc-300 dark:hover:border-white/20 transition-all">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
+              Jenny Joseph K
+            </span>
+            <span className="h-3 w-px bg-zinc-300 dark:bg-zinc-700/80" aria-hidden="true" />
+            <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+              AI Automation Engineer
+            </span>
           </div>
 
           {/* Display Headline */}
@@ -59,7 +68,7 @@ export function Hero() {
 
           {/* Single Concise Supporting Text */}
           <p className="text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            Engineering practical LLM agent pipelines, automated enterprise workflows, and reliable web applications.
+            AI workflows • Full-stack systems • Data • Automation
           </p>
 
           {/* Terminal Console */}
