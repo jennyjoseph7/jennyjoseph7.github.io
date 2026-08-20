@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 export function Projects() {
-  const [activeTabWizard, setActiveTabWizard] = useState<"pipeline" | "schema">("pipeline");
+  const [activeTabWizard, setActiveTabWizard] = useState<"stages" | "metrics">("stages");
 
   const [activeSyncerTab, setActiveSyncerTab] = useState<"sync" | "formatter" | "reattempt" | "audio">("sync");
 
