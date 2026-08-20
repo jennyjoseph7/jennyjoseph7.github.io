@@ -42,28 +42,28 @@ export function Projects() {
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-100 dark:border-white/[0.06] mb-4">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span className="font-mono text-xs text-zinc-800 dark:text-zinc-300 font-semibold">
-                      CAMPAIGN-GEN-01 // PRODUCTION
+                    <span className="text-xs font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                      Campaign Intelligence
                     </span>
                   </div>
 
-                  <div className="flex gap-1">
+                  <div className="inline-flex p-0.5 rounded-lg bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.06]">
                     <button
                       onClick={() => setActiveTabWizard("pipeline")}
-                      className={`px-2.5 py-1 text-xs font-mono rounded-lg transition-colors cursor-pointer ${
+                      className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
                         activeTabWizard === "pipeline"
-                          ? "bg-zinc-900 text-white dark:bg-white/10 dark:text-white border border-zinc-900 dark:border-white/15"
-                          : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                          ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs font-semibold"
+                          : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
                       }`}
                     >
                       Pipeline Flow
                     </button>
                     <button
                       onClick={() => setActiveTabWizard("schema")}
-                      className={`px-2.5 py-1 text-xs font-mono rounded-lg transition-colors cursor-pointer ${
+                      className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
                         activeTabWizard === "schema"
-                          ? "bg-zinc-900 text-white dark:bg-white/10 dark:text-white border border-zinc-900 dark:border-white/15"
-                          : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                          ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs font-semibold"
+                          : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
                       }`}
                     >
                       JSON Schema
@@ -83,7 +83,7 @@ export function Projects() {
                   <div className="bg-zinc-100 dark:bg-[#070A10] p-4 sm:p-5 rounded-xl border border-zinc-200 dark:border-white/[0.06] font-mono text-xs mb-5 space-y-3">
                     <div className="text-zinc-500 text-[11px] uppercase tracking-wider mb-2 flex items-center justify-between">
                       <span>11-Stage Pipeline Workflow</span>
-                      <span className="text-zinc-600 dark:text-zinc-400 font-mono">LATENCY: 180ms</span>
+                      <span className="text-emerald-600 dark:text-emerald-400 font-mono font-semibold">LATENCY: 180ms</span>
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -113,19 +113,25 @@ export function Projects() {
                 )}
 
                 {/* Problem -> Built -> Impact */}
-                <div className="space-y-2 text-xs">
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-rose-600 dark:text-rose-400 font-mono text-[11px] uppercase mr-1">Problem:</strong>
-                    Manual campaign drafting caused variable errors and corrupted vehicle specs during vernacular translation.
-                  </p>
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-blue-600 dark:text-blue-400 font-mono text-[11px] uppercase mr-1">Built:</strong>
-                    End-to-end configuration wizard with Gemini 3.1 translation engine and strict English spec overrides.
-                  </p>
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-emerald-600 dark:text-emerald-400 font-mono text-[11px] uppercase mr-1">Impact:</strong>
-                    100% technical spec retention with automated multi-channel campaign dispatch.
-                  </p>
+                <div className="space-y-2.5 text-xs">
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      Manual campaign drafting caused variable errors and corrupted vehicle specs during vernacular translation.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      End-to-end configuration wizard with Gemini 3.1 translation engine and strict English spec overrides.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Impact</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      100% technical spec retention with automated multi-channel campaign dispatch.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -142,70 +148,84 @@ export function Projects() {
             {/* Right Showcase: AutoEngage Syncer Data & Intelligence Suite */}
             <div className="lg:col-span-5 bg-white dark:bg-[#0D111A] rounded-2xl border border-zinc-200 dark:border-white/[0.08] p-6 sm:p-8 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-white/20 transition-all duration-200 shadow-sm">
               <div>
+                {/* Clean Header Bar */}
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-100 dark:border-white/[0.06] mb-4">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-                    <span className="font-mono text-xs text-zinc-800 dark:text-zinc-300 font-semibold">
-                      SYNCER-SUITE-02 // PRODUCTION
+                    <span className="text-xs font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                      Operations Platform
                     </span>
                   </div>
-                  <div className="flex gap-1 overflow-x-auto">
-                    {[
-                      { id: "sync", label: "AI Sync" },
-                      { id: "formatter", label: "DMS ETL" },
-                      { id: "reattempt", label: "Re-Attempt" },
-                      { id: "audio", label: "Audio Zip" },
-                    ].map((tab) => (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveSyncerTab(tab.id as any)}
-                        className={`px-2 py-0.5 text-[11px] font-mono rounded transition-colors cursor-pointer whitespace-nowrap ${
-                          activeSyncerTab === tab.id
-                            ? "bg-zinc-900 text-white dark:bg-white/10 dark:text-white border border-zinc-900 dark:border-white/15"
-                            : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                        }`}
-                      >
-                        {tab.label}
-                      </button>
-                    ))}
-                  </div>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                    Live in Production
+                  </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-1">
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
                   AutoEngage Syncer Suite
                 </h3>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 text-[10px] font-mono font-medium mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
-                  Built from Scratch // 10x Speedup (45-50m ➔ 4-5m) // Live in Production
+
+                {/* Highlight Badges */}
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 text-xs font-medium">
+                    Built from Scratch
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 text-xs font-medium">
+                    10x Speedup (45m ➔ 4m)
+                  </span>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-5 leading-relaxed">
+
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
                   Built-from-scratch operations suite automating dual-export Master Sheet generation, LLM transcript validation, client DMS column remapping, dialer lead pacing, and audio archiving across 15+ dealer networks.
                 </p>
+
+                {/* Segmented Tab Bar - Full Width, No Scrollbar */}
+                <div className="grid grid-cols-4 p-1 rounded-lg bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.06] mb-4">
+                  {[
+                    { id: "sync", label: "AI Sync" },
+                    { id: "formatter", label: "DMS ETL" },
+                    { id: "reattempt", label: "Re-Attempt" },
+                    { id: "audio", label: "Audio Zip" },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveSyncerTab(tab.id as any)}
+                      className={`py-1.5 text-xs font-medium rounded-md transition-all text-center cursor-pointer ${
+                        activeSyncerTab === tab.id
+                          ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs font-semibold"
+                          : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
 
                 {/* Tab 1: AI Disposition & Churn Sync */}
                 {activeSyncerTab === "sync" && (
                   <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] mb-5 space-y-3">
                     <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500">
-                      <span className="flex items-center gap-1.5 text-zinc-700 dark:text-zinc-300">
+                      <span className="flex items-center gap-1.5 text-zinc-700 dark:text-zinc-300 font-semibold">
                         <Volume2 className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
-                        Pre & Post-Sales AI Sync
+                        Call Audio & AI Disposition
                       </span>
                       <span className="text-emerald-600 dark:text-emerald-400 font-mono font-bold">10x FASTER</span>
                     </div>
 
-                    <div className="flex items-center gap-1 h-4 py-1">
-                      {[10, 18, 14, 26, 12, 22, 32, 16, 28, 12, 20, 30, 10, 18, 26, 14, 22, 10].map((h, idx) => (
+                    {/* Clean Audio Waveform Visualizer */}
+                    <div className="flex items-center gap-1 h-6 py-1 px-1">
+                      {[8, 16, 12, 22, 10, 18, 24, 14, 20, 10, 16, 22, 8, 14, 20, 12, 18, 8].map((h, idx) => (
                         <div
                           key={idx}
-                          className="flex-1 bg-zinc-400 dark:bg-zinc-600 rounded-full"
+                          className="flex-1 bg-purple-500/40 dark:bg-purple-400/40 hover:bg-purple-500 rounded-full transition-all"
                           style={{ height: `${h}px` }}
                         ></div>
                       ))}
                     </div>
 
-                    <div className="flex flex-wrap gap-1 pt-1">
-                      {dispositionTags.slice(0, 6).map((tag, idx) => (
-                        <span key={idx} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white dark:bg-white/[0.03] text-zinc-700 dark:text-zinc-400 border border-zinc-200 dark:border-white/[0.06]">
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {dispositionTags.slice(0, 5).map((tag, idx) => (
+                        <span key={idx} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white dark:bg-white/[0.04] text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-white/[0.08]">
                           {tag}
                         </span>
                       ))}
@@ -223,9 +243,9 @@ export function Projects() {
                     <div className="p-2.5 rounded bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06] text-[11px] text-zinc-700 dark:text-zinc-300 space-y-1">
                       <div className="flex justify-between text-zinc-500">
                         <span>Dealer DMS: Bullmenn / Ambal / Mahindra</span>
-                        <span className="text-emerald-500">Auto-Mapped</span>
+                        <span className="text-emerald-500 font-semibold">Auto-Mapped</span>
                       </div>
-                      <div className="text-[10px] text-zinc-600 dark:text-zinc-400">
+                      <div className="text-[10px] text-zinc-600 dark:text-zinc-400 font-mono">
                         <code>{'Chassis No -> vin_number | Service Due -> next_service_due'}</code>
                       </div>
                     </div>
@@ -237,7 +257,7 @@ export function Projects() {
                   <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] font-mono text-xs mb-5 space-y-2.5">
                     <div className="flex items-center justify-between text-[11px] text-zinc-500">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Dialer Re-Attempt Optimizer</span>
-                      <span className="text-rose-500 font-mono">100 / BATCH</span>
+                      <span className="text-rose-500 font-mono font-bold">100 / BATCH</span>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-[10px]">
                       <div className="p-2 rounded bg-rose-500/10 border border-rose-500/20 text-rose-700 dark:text-rose-300">
@@ -255,30 +275,36 @@ export function Projects() {
                   <div className="bg-zinc-100 dark:bg-[#070A10] p-4 rounded-xl border border-zinc-200 dark:border-white/[0.06] font-mono text-xs mb-5 space-y-2.5">
                     <div className="flex items-center justify-between text-[11px] text-zinc-500">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Recording Renamer & JSZip</span>
-                      <span className="text-amber-500 font-mono">AUTO-ARCHIVE</span>
+                      <span className="text-amber-500 font-mono font-bold">AUTO-ARCHIVE</span>
                     </div>
                     <div className="p-2.5 rounded bg-white dark:bg-white/[0.03] border border-zinc-200 dark:border-white/[0.06] text-[11px] text-zinc-700 dark:text-zinc-300">
                       <p className="text-[10px] text-zinc-600 dark:text-zinc-400">
-                        Filters Master Sheet $\rightarrow$ resolves remote links $\rightarrow$ auto-renames <code>phone_date</code> $\rightarrow$ packages client-side JSZip archive.
+                        Filters Master Sheet ➔ resolves remote links ➔ auto-renames <code>phone_date</code> ➔ packages client-side JSZip archive.
                       </p>
                     </div>
                   </div>
                 )}
 
                 {/* Problem -> Built -> Impact */}
-                <div className="space-y-2 text-xs">
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-rose-600 dark:text-rose-400 font-mono text-[11px] uppercase mr-1">Problem:</strong>
-                    AutoEngage exported separate files. BAs had to manually listen to every call audio, edit dispositions, and merge columns by hand — taking 45–50 minutes per 100 leads.
-                  </p>
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-blue-600 dark:text-blue-400 font-mono text-[11px] uppercase mr-1">Built:</strong>
-                    7-tool operations hub automating dual-file merging, batch LLM transcript validation, client DMS column mapping, 100-batch dialer deduplication, and JSZip audio archiving.
-                  </p>
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    <strong className="text-emerald-600 dark:text-emerald-400 font-mono text-[11px] uppercase mr-1">Impact:</strong>
-                    Cut lead processing time from 45–50 mins to 4–5 mins per 100 leads (10x speedup); used daily in production across 15+ dealership networks.
-                  </p>
+                <div className="space-y-2.5 text-xs">
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      AutoEngage exported separate files. BAs had to manually listen to every call audio, edit dispositions, and merge columns by hand taking 45–50 mins per 100 leads.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      7-tool operations hub automating dual-file merging, batch LLM transcript validation, client DMS column mapping, and JSZip audio archiving.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider shrink-0 mt-0.5">Impact</span>
+                    <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      Cut lead processing time from 45–50 mins to 4–5 mins per 100 leads (10x speedup); used daily in production across 15+ dealership networks.
+                    </p>
+                  </div>
                 </div>
               </div>
 
